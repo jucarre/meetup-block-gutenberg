@@ -12,9 +12,13 @@ function block_1_init()
             'description' => __('A custom testimonial block 1.'),
             'render_template' => plugin_dir_path(__FILE__) . '/block-1-view.php',
             'enqueue_style' => plugin_dir_path(__FILE__) . '/block-1.css',
-            'category' => 'formatting',
-            'icon' => 'admin-comments',
+
+            // category list https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/#category
+            'category' => 'text',
+            // icon list https://developer.wordpress.org/resource/dashicons/#welcome-widgets-menus
+            'icon' => 'welcome-widgets-menus',
         ));
     }
 }
+
 add_action('acf/init', 'block_1_init');
