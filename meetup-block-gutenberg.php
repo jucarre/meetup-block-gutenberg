@@ -11,6 +11,8 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+//require_once plugin_dir_path(__FILE__) . 'block-1/dev.php';
+
 register_activation_hook(__FILE__, 'child_plugin_activate');
 
 function child_plugin_activate()
