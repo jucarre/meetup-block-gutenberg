@@ -9,7 +9,7 @@ function block_1_init() {
 	if ( function_exists( 'acf_register_block_type' ) ) {
 
 		/**
-		 * Enregistre le block acf Block 1 ci-dessous.
+		 * Déclare le block acf Block 1 ci-dessous.
 		 * - name : nom du block
 		 * - title : titre du block
 		 * - description : description du block
