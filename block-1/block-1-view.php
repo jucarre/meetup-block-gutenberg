@@ -1,13 +1,13 @@
 <?php
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'testimonial-' . $block['id'];
+$id = 'cp-img-text-cta-' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'testimonial';
+$className = 'cp-img-text-cta';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }
@@ -16,29 +16,32 @@ if( !empty($block['align']) ) {
 }
 
 // Load values and handle defaults.
-$text = get_field('testimonial') ?: 'Your testimonial here...';
-$author = get_field('author') ?: 'Author name';
-$role = get_field('role') ?: 'Author role';
 $image = get_field('image') ?: 295;
-$background_color = get_field('background_color');
-$text_color = get_field('text_color');
+$title = get_field('title') ?: 'Your title';
+$text = get_field('text') ?: 'Your text';
+$cta = get_field('cta') ?: 'Your cta';
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <blockquote class="testimonial-blockquote">
-        <span class="testimonial-text"><?php echo $text; ?></span>
-        <span class="testimonial-author"><?php echo $author; ?></span>
-        <span class="testimonial-role"><?php echo $role; ?></span>
-    </blockquote>
-    <?php if (!empty($image) && !empty($image['ID'])) :?>
-    <div class="testimonial-image">
-        <?php echo wp_get_attachment_image( $image['ID'], 'full' ); ?>
+
+<div id="<?= esc_attr( $id ) ?>" class="<?php echo esc_attr($className); ?>">
+    <div class="container">
+        <!-- Image -->
+        <div class="illust">
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+        </div>
+        <div class="content">
+            <!-- Titre -->
+            <h3 class="title">
+                <?php echo $title; ?>
+            </h3>
+            <!-- Texte -->
+            <p class="text">
+                <?php echo $text; ?>
+            </p>
+            <!-- Bouton -->
+            <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>" class="btn">
+                <?php echo $cta['title']; ?>
+            </a>
+        </div>
     </div>
-    <?php endif; ?>
-    <style>
-        #<?php echo $id; ?> {
-            background: <?php echo $background_color; ?>;
-            color: <?php echo $text_color; ?>;
-        }
-    </style>
 </div>

@@ -1,0 +1,65 @@
+.cp-img-text-cta {
+    margin: 80px auto;
+    width: 60%;
+}
+
+.cp-img-text-cta .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cp-img-text-cta .container .illust {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.cp-img-text-cta .container .illust img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cp-img-text-cta .container .content {
+    width: 100%;
+    height: auto;
+}
+
+.cp-img-text-cta .container .content h3 {
+   font-size: 32px;
+   font-weight: 700;
+   margin: 0 0 20px 0;
+}
+
+.cp-img-text-cta .container .content p {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+}
+
+.cp-img-text-cta .container .content .btn {
+    border-radius: 0;
+    padding: 16px 24px 16px 24px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    transition: all 400ms;
+}
+
+.cp-img-text-cta .container .content .btn:hover {
+    color:black;
+    background-color: white;
+    box-shadow: 0 0 0 1px black;
+}
+
+.cp-img-text-cta .container .content .btn:focus-visible {
+    color:black;
+    background-color: white;
+    box-shadow: 0 0 0 1px black;
+}
